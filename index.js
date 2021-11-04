@@ -98,8 +98,8 @@ app.post(
 	//validation:
 	check("title").isLength({min: 1, max: 200}).withMessage("'title' field must be 1-200 characters long!"),
 	check("price").isFloat({min: 0.01, max: 999.99}).withMessage("'price' field amout must be from 0.01 to 999.99 euros!"),
-	check("discount_price").isFloat({min: 0.00, max: 999.99}).withMessage("'discount_price' field amout must be from 0.00 to 99.99 euros!"),
-	check("sale").custom(value => (value == 1 || value == 0) ? true : false).withMessage("when there is sale, field value = 1, when there isn't sale, field value = 0!"),
+	check("discount_price").isFloat({min: 0.00, max: 999.99}).withMessage("'discount_price' field amout must be from 0.00 to 999.99 euros!"),
+	check("sale").custom(value => (value == 1 || value == 0) ? true : false).withMessage("when sale on, field value = 1, when sale off, field value = 0!"),
 
 	(req, res) => {
 	
@@ -139,8 +139,8 @@ app.put(
 	//validation:
 	check("title").isLength({min: 1, max: 200}).withMessage("'title' field must be 1-200 characters long!"),
 	check("price").isFloat({min: 0.01, max: 999.99}).withMessage("'price' field amout must be from 0.01 to 999.99 euros!"),
-	check("discount_price").isFloat({min: 0.00, max: 999.99}).withMessage("'discount_price' field amout must be from 0.00 to 99.99 euros!"),
-	check("sale").custom(value => (value == 1 || value == 0) ? true : false).withMessage("when there is sale, field value = 1, when there isn't sale, field value = 0!"),
+	check("discount_price").isFloat({min: 0.00, max: 999.99}).withMessage("'discount_price' field amout must be from 0.00 to 999.99 euros!"),
+	check("sale").custom(value => (value == 1 || value == 0) ? true : false).withMessage("when sale on, field value = 1, when sale off, field value = 0!"),
 		
 	(req, res) => {
 
